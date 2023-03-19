@@ -7,7 +7,7 @@
 		"node": ">=10"
 	},
 	"scripts": {
-		"build": "tsc && chmod +x dist/cli.js",
+		"build": "tsc --project tsconfig.build.json  && chmod +x dist/cli.js",
 		"start": "npm run build && dist/cli.js",
 		"pretest": "npm run build",
 		"test": "xo && ava"
@@ -47,6 +47,6 @@
 		"eslint-plugin-react-hooks": "^4.6.0",
 		"ink-testing-library": "^3.0.0",
 		"typescript": "^5.0.2",
-		"xo": "^0.53.1"
+		"xo": "^0.39.1"
 	}
 }
