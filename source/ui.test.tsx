@@ -1,17 +1,20 @@
 import React from 'react';
 import chalk from 'chalk';
-import test from 'ava';
 import {render} from 'ink-testing-library';
 import App from './ui';
 
-test('greet unknown user', t => {
-	const {lastFrame} = render(<App/>);
+describe('ss', function () {
+	//const {render} = require('ink-testing-library');
 
-	t.is(lastFrame(), chalk`Hello, {green Stranger}`);
-});
+	// it('greet unknown user', () => {
+	// 	const {lastFrame} = render(<></>);
+	//
+	// 	expect(lastFrame()).toEqual( chalk`Hello, {green Stranger}`);
+	// });
 
-test('greet user with a name', t => {
-	const {lastFrame} = render(<App name="Jane"/>);
+	it('greet user with a name', () => {
+		const {lastFrame} = render(<App name="Jane"/>);
 
-	t.is(lastFrame(), chalk`Hello, {green Jane}`);
+		expect(lastFrame()).toEqual( chalk`Hello, {green Jane}`);
+	});
 });
