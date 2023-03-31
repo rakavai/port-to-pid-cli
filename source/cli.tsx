@@ -2,9 +2,9 @@
 import React from 'react';
 import {render} from 'ink';
 import meow from 'meow';
-import App from './ui';
+import App from './app';
 
-const cli = meow(`
+ meow(`
 	Usage
 	  $ find-pid-from-port
 
@@ -22,6 +22,4 @@ const cli = meow(`
 	}
 });
 
-render(<App name={cli.flags.name}/>);
-
-new Promise(resolve => setTimeout(resolve, 5000)).then()
+render(<App port={"8000"}/>);
