@@ -24,6 +24,7 @@
 		"@sindresorhus/tsconfig": "^3.0.1",
 		"@types/jest": "^29.5.0",
 		"@types/react": "^18.0.28",
+        "@types/ink-testing-library": "^1.0.1",
 		"chalk": "^4.1.2",
 		"eslint-config-xo-react": "^0.27.0",
 		"eslint-plugin-react": "^7.32.2",
