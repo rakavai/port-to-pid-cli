@@ -24,4 +24,4 @@ const cli = meow(`
 
 render(<App name={cli.flags.name}/>);
 
-new Promise(resolve => setTimeout(resolve, 5000))
+new Promise(resolve => setTimeout(resolve, 5000)).then()
