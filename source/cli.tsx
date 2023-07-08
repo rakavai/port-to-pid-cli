@@ -4,7 +4,7 @@ import {render} from 'ink';
 import meow from 'meow';
 import App from './app';
 
- meow(`
+const cli = meow(`
 	Usage
 	  $ find-pid-from-port
 
@@ -16,10 +16,11 @@ import App from './app';
 	  Hello, Jane
 `, {
 	flags: {
-		name: {
-			type: 'string'
+		port: {
+			type: 'string',
+            isRequired: true
 		}
 	}
 });
 
-render(<App port={"8000"}/>);
+render(<App port={cli.flags.port}/>);

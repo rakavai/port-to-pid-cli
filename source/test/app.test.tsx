@@ -17,13 +17,26 @@ describe('app', function () {
                         res(data)
                     });
                 });
-                console.log("PID", pid)
             });
 
             it('print out the port no', async function () {
                 const {lastFrame} = render(<App port={"45066"}/>);
 
-                expect(lastFrame()).toEqual(chalk`Port {bold.green 45066} is being used by the following process:`);
+                const toTest = () => {
+                    expect(lastFrame()).toEqual(chalk`Port {bold.green 45066} is being used by the following process: ${pid}`);
+                };
+
+                for (let i = 0; ; i++) {
+                    await new Promise(res => setTimeout(res, 10))
+                    try{
+                        toTest();
+                        break
+                    }catch (e) {
+                        if(i>100){
+                            throw e
+                        }
+                    }
+                }
             });
 
             afterEach(function () {
