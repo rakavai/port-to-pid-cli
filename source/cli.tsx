@@ -9,11 +9,11 @@ const cli = meow(`
 	  $ find-pid-from-port
 
 	Options
-		--name  Your name
+		--port  Port
 
 	Examples
-	  $ find-pid-from-port --name=Jane
-	  Hello, Jane
+	  $ find-pid-from-port --name=8080
+	  Port 8080 is being used by the following process: 28922
 `, {
 	flags: {
 		port: {
