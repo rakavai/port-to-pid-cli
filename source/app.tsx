@@ -10,12 +10,15 @@ const App: FC<{ port?: string }> = ({port}) => {
         }
         getPidFromPort(port).then(resultPid => {
             setPid(resultPid)
+        }).catch(_ => {
+
         })
     }, [port])
     return (<Text>
-        <Text>Port </Text>
-        <Text color={"green"} bold>{port}</Text>
-        <Text> is being used by the following process: {pid}</Text>
+        {pid
+            ? <>Port <Text color={"green"} bold>{port}</Text> is being used by the following process: {pid}</>
+            : <>No process was found for the port <Text color={"green"} bold>50666</Text></>
+        }
     </Text>);
 };
 
