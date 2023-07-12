@@ -17,7 +17,7 @@ const App: FC<{ port?: string }> = ({port}) => {
     return (<Text>
         {pid
             ? <>Port <Text color={"green"} bold>{port}</Text> is being used by the following process: {pid}</>
-            : <>No process was found for the port <Text color={"green"} bold>50666</Text></>
+            : <>No process was found for the port <Text color={"green"} bold>{port}</Text></>
         }
     </Text>);
 };
