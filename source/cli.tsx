@@ -6,7 +6,7 @@ import App from './app';
 
 const cli = meow(`
 	Usage
-	  $ find-pid-from-port
+	  $ find-pid-from-port --port  Port
 
 	Options
 		--port  Port
